@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added viewport meta tag -->
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Instagram Login - CodeWithJatin</title>
+    <style>
+        /* Add styles for the show/hide password button */
+        .show-password-btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none; /* Initially hidden */
+        }
+        
+        /* Adjust image sizes */
+        .phoneImg,
+        
+        #play
+         {
+            width: 120px; /* Adjust as needed */
+            height: 50px; /* Maintain aspect ratio */
+        }
+    #microsoft{
+        width: 110px;
+        height: 40px;
+        /* style.css */
+    }
+.instaLogo{
+    width: 195px;
+    height: 100px;
+}
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.phoneImg {
+    max-width: 100%;
+    height: auto;
+}
+
+.form-div {
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #3897f0;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.fb-login {
+    display: inline-block;
+    color: #385185;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .form-div {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form-div {
+        padding: 10px;
+    }
+    .input {
+        padding: 8px;
+        margin: 8px 0;
+    }
+    .login-btn {
+        padding: 8px;
+    }
+    .fb-login {
+        font-size: 0.9em;
+    }
+}
+
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <img src="IG.jpeg" alt="" class="phoneImg">
+        <div class="form-div">
+            <form action="">
+                <img class="instaLogo" src="C:\Users\PC\Downloads\pngegg.png" alt="logo">
+                <input type="text" class="input" placeholder="Phone number, username, or email" required>
+                <!-- Add an ID to the password input field for easy access -->
+                <div style="position: relative;">
+                    <input type="password" id="password" class="input" required placeholder="Password" oninput="showPasswordOption()">
+                    <!-- Add a button to toggle password visibility -->
+                    <a href="https://www.instagram.com/"><button type="button" class="show-password-btn" onclick="togglePasswordVisibility()">Show</button>
+                </div></a>
+                <button class="login-btn">Log In</button>
+                <p id="or">OR</p>
+                <a href="https://www.facebook.com/login/" class="fb-login"><i class='bx bxl-facebook-square'></i> Log in with Facebook</a>
+            </form>
+            
+            <div class="sign-up">
+                <p>Don't have an account? <a href="https://www.instagram.com/accounts/emailsignup/" class="sign-link" style="color: rgb(0,149,246);">Sign up</a></p>
+            </div>
+            <div class="get-app">
+                <p>Get the app</p>
+                <div class="store">
+                    <img id="play" src="C:\Users\PC\Downloads\google-play-badge.png" alt="">
+                    <img id="microsoft" src="C:\Users\PC\Downloads\EHY6QnZYdNX.png" alt="">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Function to show password option when user starts typing
+        function showPasswordOption() {
+            var passwordInput = document.getElementById('password');
+            var showPasswordBtn = document.querySelector('.show-password-btn');
+            // Show the button if the password field is not empty
+            if (passwordInput.value.length > 0) {
+                showPasswordBtn.style.display = 'block';
+            } else {
+                showPasswordBtn.style.display = 'none';
+            }
+        }
+
+        // Function to toggle password visibility
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById('password');
+            // Toggle the type attribute of the password input field
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                document.querySelector('.show-password-btn').textContent = 'Hide';
+            } else {
+                passwordInput.type = 'password';
+                document.querySelector('.show-password-btn').textContent = 'Show';
+            }
+        }
+    </script>
+</body>
+
+</html>
